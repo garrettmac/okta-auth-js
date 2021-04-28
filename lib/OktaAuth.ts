@@ -619,6 +619,10 @@ class OktaAuth implements SigninAPI, SignoutAPI {
   forgotPassword(opts): Promise<AuthTransaction> {
     return postToTransaction(this, '/api/v1/authn/recovery/password', opts);
   }
+  
+  resetPassword(opts): Promise<AuthTransaction> {
+    return postToTransaction(this, '/api/v1/authn/credentials/reset_password', opts);
+  }
 
   // { username, (relayState) }
   unlockAccount(opts: ForgotPasswordOptions): Promise<AuthTransaction> {
