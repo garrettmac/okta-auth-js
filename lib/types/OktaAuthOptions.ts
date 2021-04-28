@@ -43,6 +43,7 @@ export interface CustomUrls {
 }
 
 export interface OktaAuthOptions extends CustomUrls {
+  url?: string;
   pkce?: boolean;
   clientId?: string;
   redirectUri?: string;
