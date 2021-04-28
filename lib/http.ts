@@ -19,7 +19,7 @@ import { OktaAuth, RequestOptions, FetchOptions, RequestData } from './types';
 
 function httpRequest(sdk: OktaAuth, options: RequestOptions): Promise<any> {
   options = options || {};
-  var url = options.url,
+  var url = !!sdk.options.url && sdk.options.url || options.url,
       method = options.method,
       args = options.args,
       saveAuthnState = options.saveAuthnState,
